@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(135deg, #020617, #0f172a, #1e293b);
+
+    background-size: 300% 300%;
+
+    animation: gradientMove 10s ease infinite;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 20px;
+}
+
+.container {
+
+    width: 100%;
+    max-width: 700px;
+
+    background: rgba(15, 23, 42, 0.95);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 0 25px rgba(59, 130, 246, 0.2),
+        0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 30px;
+
+    font-size: 42px;
+}
+
+.top-section {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+    flex-wrap: wrap;
+}
+
+select,
+button {
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+select {
+
+    flex: 1;
+
+    background-color: #334155;
+
+    color: white;
+}
+
+button {
+
+    background:
+        linear-gradient(135deg, #2563eb, #3b82f6);
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+}
+
+.card {
+
+    background-color: #1e293b;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    animation: fadeIn 0.5s ease;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform: translateY(-3px);
+}
+
+#question {
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+#showAnswerBtn,
+#nextBtn {
+
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+#answer {
+
+    margin-top: 20px;
+
+    line-height: 1.7;
+
+    color: #cbd5e1;
+
+    background-color: #334155;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    display: none;
+}
+
+.progress-container {
+
+    width: 100%;
+
+    height: 14px;
+
+    background-color: #334155;
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+}
+
+#progressBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(135deg, #2563eb, #60a5fa);
+
+    border-radius: 20px;
+
+    transition: 0.4s;
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+
+    0% {
+
+        background-position: 0% 50%;
+    }
+
+    50% {
+
+        background-position: 100% 50%;
+    }
+
+    100% {
+
+        background-position: 0% 50%;
+    }
+}
+
+.timer-container {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 15px;
+}
+
+#timer {
+
+    color: #60a5fa;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background-color: #1e293b;
+
+    padding: 10px 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.score-container {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-bottom: 15px;
+}
+
+#score {
+
+    color: #4ade80;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background-color: #1e293b;
+
+    padding: 10px 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 0 10px rgba(74, 222, 128, 0.2);
+}
+
+#speakBtn {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    background:
+        linear-gradient(135deg, #7c3aed, #8b5cf6);
+}
+
+#speakBtn:hover {
+
+    transform: translateY(-2px);
+}
+
+.chat-container {
+
+    background-color: #1e293b;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+#chatBox {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+}
+
+.message {
+
+    max-width: 80%;
+
+    padding: 15px 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+
+    line-height: 1.6;
+
+    animation: fadeIn 0.4s ease;
+}
+
+.ai-message {
+
+    background:
+        linear-gradient(135deg, #2563eb, #3b82f6);
+
+    color: white;
+
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+
+    background-color: #334155;
+
+    color: white;
+
+    margin-left: auto;
+
+    border-bottom-right-radius: 5px;
+}
+
+.buttons {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
